@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <title> Ex3 </title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="includes/style.css">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>הרשמה לתכנית של אופירה וברקוביץ</h1>
+    </header>
+    <main>
+        <form action="http://html5-book.co.il/teach/forms/get_form2.php"  method="get">
+            <label>1. שם מלא
+                <input type="text" name="fullName" pattern="[A-Za-z\s]+"> <br>
+            </label>
+            <label> 2. סיסמא
+            <input type="password" name="pass" pattern=".{6,}" title="Six or more characters" required> <br>
+            </label>
+            <label>3. מייל
+                <input type="email" name="mail"> <br>
+            </label>
+            <label>4. אתר אינטרנט
+                <input type="url name" name="website" pattern="https?://.+" title="Include http://" required> <br>
+            </label>
+            <label>5. טלפון
+                <input type="tel" name="phone" pattern="[0-9]+" title="numbers between 0-9" required> <br>
+            </label>
+            <label>6. תן ציון לאופירה
+                <input type="number" name="coffee"> <br>
+            </label>
+            <label> 7. עד כמה אתה מרוצה מהתכנית מ- 1-100 ?
+                <p>Value: <span id="demo"></span></p>
+                <input type="range" min="1" max="100" value="50" name="temper" class="slider" id="myRange" > <br>
+            </label>
+            <label>8. מה אתה חושב על ברקוביץ ?
+                <textarea rows="4" cols="135" name="address"> </textarea> <br><br>
+            </label>
+            <fieldset>
+                <legend>9. איזה מן המשפטים נכון (יכולה להיות יותר מתשובה אחת נכונה)  ?: </legend>
+                <label>ברקוביץ לצביקה פיק : "מתי אתה מתכוון לספר את השיער המכוער שלך" ?
+                    <input type="checkbox" name="interests[]" value="sentence1 :true">
+                </label>
+                <br>
+                <label>מני נפתלי על ברקוביץ : "אייל ברקוביץ הוא אפרוח בשבילי"
+                    <input type="checkbox" name="interests[]" value="sentence2 :true">
+                </label>
+                <br>
+                <label> ברקוביץ למני נפתלי : "אתה לא גבר, חיפשת קריירה, את יכול לצאת מהאולפן"
+                    <input type="checkbox" name="interests[]" value="sentence3 :true">
+                </label>
+
+            </fieldset> <br>
+            <fieldset>
+                <legend>10. האם יש להוריד את התכנית משידור ?</legend>
+                <label>
+                    <input type="radio" name="gender" value="male" checked> כן
+                    <br>
+                    <input type="radio" name="gender" value="female"> לא
+            </label>
+            </fieldset> <br>
+            <label>11. תן ציון לתכניות
+                <select name="age">
+                    <option selected="selected">בחר</option>
+                    <option value="10">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </label><br>
+            <input type="submit" value="שלח"> <br>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+
+</div>
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
+</body>
+</html>
+
+
+
+
